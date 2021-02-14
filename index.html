@@ -3,72 +3,16 @@
 <head>
   <title>Boulder-Parchment-Shears</title>
   <meta charset="UTF-8"/>
-</head>
-<body>
-  <script>
+
+  <script type="text/javascript" src="scripts.js">
     // Your JavaScript goes here!
-    function computerPlay() {
-        let randomNum = Math.floor(Math.random() * 3);
-
-        if (randomNum === 0) {
-          return "Boulder"; }
-        else if (randomNum === 1) {
-          return "Parchment"; }
-        else {
-          return "Shears"; }
-    }
-
-    function playRound(playerSelection, computerSelection) {
-      playerSelection = capitalize(playerSelection);
-
-      if ((playerSelection === "Boulder" && computerSelection === "Shears") || (playerSelection === "Parchment" && computerSelection === "Boulder") || (playerSelection === "Shears" && computerSelection === "Parchment")) {
-        console.log("You Win! " + playerSelection + " beats " + computerSelection);
-        return "Win";
-      }
-      else if ((computerSelection === "Boulder" && playerSelection === "Shears") || (computerSelection === "Parchment" && playerSelection === "Boulder") || (computerSelection === "Shears" && playerSelection === "Parchment")) {
-        console.log("You Lose! " + computerSelection + " beats " + playerSelection);
-        return "Lose";
-      }
-      else {
-        console.log("You Tied!");
-        return "Tied";
-      }
-    }
-
-    function game() {
-      let playerPoints = 0;
-      let computerPoints = 0;
-      let playerSelection;
-      let computerSelection;
-      let resultOfRound;
-
-      for (let round = 1; round <= 5; round++) {
-        playerSelection = prompt("Input Boulder, Parchment, or Shears");
-        computerSelection = computerPlay();
-        resultOfRound = playRound(playerSelection, computerSelection);
-        if (resultOfRound === "Win") {
-          playerPoints += 1; }
-        if (resultOfRound === "Lose") {
-          computerPoints += 1; }
-      }
-
-      if (playerPoints > computerPoints) {
-        console.log("You win the game");
-      }
-      else if (playerPoints < computerPoints) {
-        console.log("You lose the game");
-      }
-      else {
-        console.log("You tied the game");
-      }
-    }
-
-    function capitalize(string) { //function to only capitalize first letter of a string
-      const lower = string.toLowerCase();
-      return string.charAt(0).toUpperCase() + lower.slice(1);
-    }
+    
     
     game();
   </script>
+</head>
+
+<body>
+  
 </body>
 </html>
