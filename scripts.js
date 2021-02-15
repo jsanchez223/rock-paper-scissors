@@ -1,3 +1,10 @@
+document.getElementById('Boulder').onclick = game;
+document.getElementById('Parchment').onclick = game;
+document.getElementById('Shears').onclick = game;
+let round = 0;
+let playerPoints = 0;
+let computerPoints = 0;
+
 function computerPlay() {
     let randomNum = Math.floor(Math.random() * 3);
 
@@ -28,31 +35,29 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  let playerPoints = 0;
-  let computerPoints = 0;
-  let playerSelection;
-  let computerSelection;
-  let resultOfRound;
 
-  for (let round = 1; round <= 5; round++) { 
-    playerSelection = prompt("Input Boulder, Parchment, or Shears");
-    computerSelection = computerPlay();
-    resultOfRound = playRound(playerSelection, computerSelection);
+  if (round < 5) {
+    let playerSelection = this.id;
+    let computerSelection = computerPlay();
+    let resultOfRound = playRound(playerSelection, computerSelection);
     if (resultOfRound === "Win") {
       playerPoints += 1; }
     if (resultOfRound === "Lose") {
       computerPoints += 1; }
-  }
+    round++;
+   }
+   else {
+    if (playerPoints > computerPoints) {
+      console.log("You win the game");
+    }
+    else if (playerPoints < computerPoints) {
+      console.log("You lose the game");
+    }
+    else {
+      console.log("You tied the game");
+    }
+   }
 
-  if (playerPoints > computerPoints) {
-    console.log("You win the game");
-  }
-  else if (playerPoints < computerPoints) {
-    console.log("You lose the game");
-  }
-  else {
-    console.log("You tied the game");
-  }
 }
 
 function capitalize(string) { //function to only capitalize first letter of a string

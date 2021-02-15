@@ -8,7 +8,8 @@
 **Update:**
 - I added computerPlay(), playRound(string input, string input),  game(), and capatilize() functions.
 - The game plays on the console.
+- I added buttons for inputs instead of prompt.
 
 **Goals:**
 - Implement CSS and HTML to make it astheticly pleasing
-- change player input from text to buttons
+- Make the reaction time for the game faster. As it is now, if I spam a button, it does not always register.
